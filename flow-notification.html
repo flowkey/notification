@@ -1,0 +1,18 @@
+<template name="FlowAlert">
+	<div class="flow-alert-message-wrapper">
+		<div class="flow-alert-message">
+			<div class="title">{{title}}</div>
+			<div class="message">{{message}}</div>
+			{{#if buttonLabels}}
+				<div class="flow-alert-buttons">
+					{{#each buttonLabelsIndexed}}
+						<div class="flow-confirm-button flow-notification-button flow-confirm-{{index}}" data-index={{index}} >{{text}}</div>
+					{{/each}}
+				</div>
+			{{else}}
+				<div class="flow-alert-button flow-notification-button">{{buttonLabel}}</div>
+			{{/if}}
+		</div>
+	</div>
+	<div class="flow-alert-background"></div>
+</template>

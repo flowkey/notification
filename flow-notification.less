@@ -1,4 +1,43 @@
-@import '{}/client/styles/global.import.less';
+ 
+// Flexbox display
+// flex or inline-flex
+.flex-display(@display: flex) {
+  display: ~"-webkit-@{display}";
+  display: ~"-moz-@{display}";
+  display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+  display: ~"-ms-@{display}"; // IE11
+  display: @display;
+}
+ 
+
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+     -moz-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+          flex-grow: @grow;
+}
+
+.justify-content(@justify: flex-start) {
+  -webkit-justify-content: @justify;
+     -moz-justify-content: @justify;
+      -ms-justify-content: @justify;
+          justify-content: @justify;
+}
+ 
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+     -moz-align-items: @align;
+      -ms-align-items: @align;
+          align-items: @align;
+}
+
+.flex-wrap(@wrap: nowrap) {
+  -webkit-flex-wrap: @wrap;
+     -moz-flex-wrap: @wrap;
+      -ms-flex-wrap: @wrap;
+          flex-wrap: @wrap;
+}
+
 
 .flow-alert-background {
     width: 100%;
@@ -31,7 +70,7 @@
     .title {
         //xxx: add roboto if there;
         margin-top: 22px;
-        font-family: "HelveticaNeue-Medium", Arial, Sans-Serif;
+        font-family: "HelveticaNeue-Medium", "Roboto", Arial, Sans-Serif;
         letter-spacing: 0.0218em;
         color: #0a0a0a;
         text-align: center;
@@ -40,7 +79,7 @@
 
     .message {
         margin-top: 14px;
-        font-family: "HelveticaNeue", Arial, Sans-Serif;
+        font-family: "HelveticaNeue", "Roboto", Arial, Sans-Serif;
         letter-spacing: 0.0218em;
         color: #111112;
         text-align: center;
@@ -74,7 +113,7 @@
         .flex-grow(1);
         min-width: 50%;
         font-size: 16px;
-        font-family: "HelveticaNeue", Arial, Sans-Serif;
+        font-family: "HelveticaNeue", "Roboto", Arial, Sans-Serif;
         white-space: nowrap;
         letter-spacing: 0.0218em;
         height: 43px;

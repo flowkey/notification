@@ -12,7 +12,7 @@ class Notification{
 	alert({message, callback, title = 'Alert', buttonLabel = 'Ok'}){
 		if (!this.running){
 			this.callback = callback;
-			this.view = Blaze.renderWithData(Template.FlowAlert, {title, message, buttonLabel}, document.body);
+			this.view = Blaze.renderWithData(Template.__FlowAlert, {title, message, buttonLabel}, document.body);
 			this.running = true;
 		}else{
 			// delay other alerts till running one is closed
@@ -27,7 +27,7 @@ class Notification{
 		if (!_(buttonLabels).isArray()) throw new Meteor.Error('Button Label has to be an array');
 		if (!this.running){
 			this.callback = callback;
-			this.view = Blaze.renderWithData(Template.FlowAlert, {title, message, buttonLabels}, document.body);
+			this.view = Blaze.renderWithData(Template.__FlowAlert, {title, message, buttonLabels}, document.body);
 			this.running = true;
 		}else{
 			// delay other alerts till running one is closed
@@ -49,7 +49,7 @@ class Notification{
 export const notification = new Notification();
 
 
-Template.FlowAlert.events({
+Template.__FlowAlert.events({
 	'click .flow-alert-button': function () {
 		notification.close(1);
 	},
@@ -59,7 +59,7 @@ Template.FlowAlert.events({
 	}
 });
 
-Template.FlowAlert.onRendered(function(){
+Template.__FlowAlert.onRendered(function(){
 	var $buttons = this.$('.flow-confirm-button');
 	if($buttons.length > 1 && $buttons.first().width() > 200 ){
 		this.$('.flow-alert-buttons').addClass('wrapped');
@@ -67,7 +67,7 @@ Template.FlowAlert.onRendered(function(){
 
 })
 
-Template.FlowAlert.helpers({
+Template.__FlowAlert.helpers({
 	buttonLabelsIndexed: function () {
 		var buttonLabels = Template.currentData().buttonLabels;
 		if(buttonLabels){

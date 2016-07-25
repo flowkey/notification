@@ -1,6 +1,6 @@
 Package.describe({
     name: 'flowkey:notification',
-    version: '0.1.2',
+    version: '1.0.0',
 
     // Brief, one-line summary of the package.
     summary: 'Simple Alert Messages for Cordova and Web',
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Cordova.depends({
-    'org.apache.cordova.dialogs': '0.3.0'
+    'cordova-plugin-dialogs': '1.2.1'
 });
 
 Package.onUse(function(api) {

@@ -55,7 +55,7 @@ Template.__FlowAlert.events({
 	},
 	'click .flow-confirm-button': function (e) {
 		var buttonIndex = $(e.currentTarget).attr('data-index');
-		notification.close(buttonIndex);
+		notification.close(parseInt(buttonIndex));
 	}
 });
 

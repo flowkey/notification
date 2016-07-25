@@ -9,9 +9,11 @@ class FlowAlert {
     confirm({message, callback, title, buttonLabels}) {
         if (!navigator.notification) throw new Meteor.Error('Cordova Plugin for dialogs is not installed correctly');
         if (!_(buttonLabels).isArray()) throw new Meteor.Error('Button Label has to be an array');
-        if (!callback) callback = function(buttonIndex) {}
+        const wrappedCallback = function(buttonIndex) {
+            if(callback) callback(parseInt(buttonIndex));
+        }
 
-        navigator.notification.confirm(message, callback, title, buttonLabels);
+        navigator.notification.confirm(message, wrappedCallback, title, buttonLabels);
     }
 }
 

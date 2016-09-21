@@ -14,6 +14,7 @@ import { notification } from 'flowkey:notification';
 notification.alert({
 	message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
 	title: 'This is a test Message',
+	buttonLabel: 'Nice',
 	callback: function(){}
 });
 ```

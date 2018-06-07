@@ -1,3 +1,7 @@
+##v2.0.0
+
+- Major update of cordova-plugin-dialogs to 2.0.1
+
 ##v1.0.0
 
 - Use numbers instead of strings for callback index

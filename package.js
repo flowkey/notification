@@ -1,6 +1,6 @@
 Package.describe({
     name: 'flowkey:notification',
-    version: '1.0.0',
+    version: '2.0.0',
 
     // Brief, one-line summary of the package.
     summary: 'Simple Alert Messages for Cordova and Web',

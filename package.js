@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Cordova.depends({
-    'cordova-plugin-dialogs': '1.2.1'
+    'cordova-plugin-dialogs': '2.0.1'
 });
 
 Package.onUse(function(api) {

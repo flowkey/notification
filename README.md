@@ -34,5 +34,6 @@ notification.confirm({
 ## Notice
 
 - Safari
-To style correctly in safari any of the parents in the dom should have 'safari' as a class, no browser
-detection implemented inside this package
+
+To style correctly in safari any of the parents in the dom should have 'safari' as a class. No browser
+detection implemented inside this package.

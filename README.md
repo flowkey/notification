@@ -18,6 +18,14 @@ notification.alert({
     buttonLabel: "Nice",
     callback: function() {},
 });
+
+// if no callback is provided you can await the user's button click
+await notification.alert({
+    message:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    title: "This is a test Message",
+    buttonLabel: "Nice",
+});
 ```
 
 ### notification.confirm
@@ -28,6 +36,14 @@ notification.confirm({
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
     title: "This is a test Message",
     callback: function(index) {}, // index(String) conforms with the buttonLabels index counting from 1 - same for ios
+    buttonLabels: ["Ok", "Not now"],
+});
+
+// if no callback is provided you can await the user's choice
+const buttonIndex = await notification.confirm({
+    message:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    title: "This is a test Message",
     buttonLabels: ["Ok", "Not now"],
 });
 ```

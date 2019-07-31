@@ -1,3 +1,5 @@
+import { enhanceWithPromiseSupport } from "./enhanceWithPromiseSupport";
+
 class FlowAlert {
     alert({ message, callback, title, buttonLabel }) {
         if (!navigator.notification)
@@ -19,4 +21,4 @@ class FlowAlert {
     }
 }
 
-export const notification = new FlowAlert();
+export const notification = enhanceWithPromiseSupport(new FlowAlert());

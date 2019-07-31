@@ -1,5 +1,6 @@
 import { CallbackList } from "meteor/flowkey:callback-list";
 import { Blaze } from "meteor/blaze";
+import { enhanceWithPromiseSupport } from "./enhanceWithPromiseSupport";
 
 import "./flow-notification.html";
 
@@ -53,7 +54,7 @@ class Notification {
     }
 }
 
-export const notification = new Notification();
+export const notification = enhanceWithPromiseSupport(new Notification());
 
 Template.__FlowAlert.events({
     "click .flow-alert-button": function() {

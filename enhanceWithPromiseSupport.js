@@ -1,3 +1,5 @@
+// put this in extra file to make this independent of cordova/browser implementations
+
 // if a callback is provided then don't resolve but use provided callback
 export const enhanceWithPromiseSupport = notification => ({
     confirm: args =>
